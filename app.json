@@ -9,13 +9,17 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "googleServicesFile": "./GoogleService-Info.plist",
+      "bundleIdentifier": "com.amirnotfound.firebase"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.amirnotfound.firebase",
+      "googleServicesFile": "./google-services.json"
     },
     "web": {
       "bundler": "metro",
@@ -32,10 +36,24 @@
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
-      ]
+      ],
+      ["expo-build-properties", {
+        "android": {
+          "useFrameworks": "static"
+        }
+      }],
+      "@react-native-firebase/app",
+			"@react-native-firebase/auth"
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "androidNavigationBar": {
+      "backgroundColor": "#FFFFFF"
+    },
+    "androidStatusBar": {
+      "backgroundColor": "#FFFFFF",
+      "barStyle": "dark-content"
     }
   }
 }
